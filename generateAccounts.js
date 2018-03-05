@@ -1,9 +1,9 @@
 const Web3 = require('web3')
 const net = require('net')
 
-// **** Add your own IPC path here *****
+// **** Add your IPC path here *****
 let ipcPath = ''
-// **** Add your own Mnemonic here *****
+// **** Add your seed here *****
 let mnemonic = ''
 // Set to m/44'/60'/0' for ledger nano s hardware wallet compatibilty
 let wallet_hdpath = "m/44'/60'/0'/0/"
@@ -13,7 +13,6 @@ let web3 = new Web3(ipcPath, net)
 let bip39 = require('bip39')
 let hdkey = require('ethereumjs-wallet/hdkey')
 let hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic))
-
 
 // Generate 10 accounts and add to Geth.
 // Does not preserve index in derivation path - just adds them to Geth. 
